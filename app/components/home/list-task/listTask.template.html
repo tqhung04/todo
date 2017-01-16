@@ -1,0 +1,13 @@
+<div class="container">
+<h2>Todo List</h2>
+
+<input type="checkbox" 	name="" 
+						ng-model="$ctrl.selectedAll">
+
+<add-new-task></add-new-task>
+
+<task-detail     ng-repeat = "task in $ctrl.tasks track by $index"
+                 track = "$index"
+                 task = "task"
+                 selected = "$ctrl.selectedAll">
+</task-detail>

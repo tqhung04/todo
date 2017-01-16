@@ -1,0 +1,26 @@
+<table class="table" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<td class="_10"><input 	type="checkbox"
+									ng-model="$ctrl.cb.value"
+									ng-true-value="'active'"
+									ng-false-value="'noactive'">
+			</td>
+			<td class="_10">{{$ctrl.track}}</td>
+			<td class="_60 align" ng-hide="!$ctrl.checkedTask">
+				<input type="text" 	autofocus
+									ng-model="$ctrl.txtTask"
+									ng-blur="$ctrl.edit()"
+									>
+			</td>
+			<td class="_60 align" 	ng-click="$ctrl.checkedTask = true; $ctrl.txtTask = ''" 
+									ng-hide="$ctrl.checkedTask"
+									ng-class="$ctrl.cb.value">
+									{{$ctrl.task.name}}
+			</td>
+			<td class="_10">
+			 	<button class="btn btn-sm btn-danger right" ng-click="$ctrl.delete()">Delete</button>
+			</td>
+		</tr>
+	</tbody>
+</table>

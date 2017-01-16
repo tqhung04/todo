@@ -1,0 +1,32 @@
+.title {
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right
+}
+
+._10 {
+	width: 10%;
+}
+._60 {
+	width: 60%;
+}
+
+.align {
+	text-align: center;
+}
+
+.mesWarning {
+	color: red;
+	font-style: italic;
+}
+
+.active {
+	text-decoration: line-through;
+	font-style: italic;
+}
