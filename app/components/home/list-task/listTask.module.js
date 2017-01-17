@@ -5,9 +5,13 @@ function ListTaskController (Task) {
 	var vm = this;
 
 	vm.$onInit = function () {
-			vm.tasks = Task.getAllTasks();
+		vm.tasks = Task.getAllTasks();
 
-			vm.selectedAll = false;
+		vm.selectedAll = false;
+	}
+
+	vm.deleteSelectedTasks = function () {
+		Task.deleteSelectedTasks();
 	}
 }
 
