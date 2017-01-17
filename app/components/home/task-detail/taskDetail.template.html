@@ -2,9 +2,10 @@
 	<tbody>
 		<tr>
 			<td class="_10"><input 	type="checkbox"
-									ng-model="$ctrl.cb.value"
+									ng-model="$ctrl.cb"
 									ng-true-value="'active'"
-									ng-false-value="'noactive'">
+									ng-false-value="'noactive'"
+									ng-click="$ctrl.selectedBox()">
 			</td>
 			<td class="_10">{{$ctrl.track}}</td>
 			<td class="_60 align" ng-hide="!$ctrl.checkedTask">
@@ -15,7 +16,7 @@
 			</td>
 			<td class="_60 align" 	ng-click="$ctrl.checkedTask = true; $ctrl.txtTask = ''" 
 									ng-hide="$ctrl.checkedTask"
-									ng-class="$ctrl.cb.value">
+									ng-class="$ctrl.cb">
 									{{$ctrl.task.name}}
 			</td>
 			<td class="_10">

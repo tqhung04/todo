@@ -19,6 +19,7 @@ angular
 			editTask: editTask,
 			deleteTask: deleteTask,
 			add: add,
+			deleteSelectedTasks: deleteSelectedTasks
 		};
 
 		function getAllTasks () {
@@ -58,6 +59,16 @@ angular
 				status: 1
 			});
 			return "Add Task Successed."
+		}
+
+		function deleteSelectedTasks () {
+			angular.forEach(tasks, function(val, key) {
+				if ( val.status == 2 ) {
+					tasks.splice(key, 1)					;
+					deleteSelectedTasks();
+				}
+			});
+
 		}
 
 		return services;

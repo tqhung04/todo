@@ -1,13 +1,12 @@
 'use strict';
 
-function TaskDetailController (Task) {
+function TaskDetailController (Task, $window) {
 	console.log('TaskDetailController loaded.');
 
 	var vm = this;
 
 	vm.$onInit = function () {
 		vm.checkedTask = false;
-		console.log(vm.selected)
 	}
 
 	vm.edit = function () {	
@@ -15,13 +14,31 @@ function TaskDetailController (Task) {
 
 		if ( vm.txtTask ) {
 			Task.editTask(vm.task.id, vm.txtTask, vm.task.status);
-			console.log(vm.txtTask)	
 		}
 	}
 
 	vm.delete = function () {
-		console.log('delete')
 		Task.deleteTask(vm.task.id)
+	}
+
+	vm.selectedBox = function () {
+		if ( vm.cb == `active` )
+			Task.editTask(vm.task.id, vm.task.name, 2);
+		else
+			Task.editTask(vm.task.id, vm.task.name, 1);
+	}
+
+	vm.$onChanges = function () {
+		if ( vm.selected == true ) {
+			vm.cb = `active`;
+			Task.editTask(vm.task.id, vm.task.name, 2);
+			console.log(vm.task)
+		}
+		else {
+			vm.cb = `noactive`;
+			Task.editTask(vm.task.id, vm.task.name, 1);
+			console.log(vm.task)
+		}
 	}
 }
 
